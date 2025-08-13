@@ -3,14 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Page</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>My GitHub Page</title>
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --background-color: #f8f9fa;
+            --text-color: #343a40;
+            --card-background: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 400;
+            font-size: 1.1em;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: color 0.3s, background-color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--card-background);
+            background-color: var(--primary-color);
+        }
+
+        .page-section {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .content {
+            background-color: var(--card-background);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            max-width: 700px;
+        }
+
+        .content h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
-
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
@@ -22,23 +97,22 @@
     <section id="about" class="page-section">
         <div class="content">
             <h1>About Me</h1>
-            <p>Hello! I'm a developer and researcher passionate about creating and exploring new ideas. This is a personal space to share my work and interests.</p>
+            <p>Welcome! I'm a developer and researcher passionate about technology and innovation. This is my personal space to share my projects and ideas.</p>
         </div>
     </section>
 
     <section id="research" class="page-section">
         <div class="content">
             <h1>Research</h1>
-            <p>Here you'll find information about my research projects, publications, and academic interests. I focus on machine learning and data science applications.</p>
+            <p>This section outlines my research interests, publications, and ongoing projects. My work focuses on machine learning and data science.</p>
         </div>
     </section>
 
     <section id="portfolio" class="page-section">
         <div class="content">
             <h1>Portfolio</h1>
-            <p>This section showcases a selection of my personal and professional projects. Feel free to explore the code and demos linked below.</p>
+            <p>Here you can find a selection of my work, including personal projects, code snippets, and design examples. Click on the links to explore more!</p>
         </div>
     </section>
-
 </body>
 </html>
