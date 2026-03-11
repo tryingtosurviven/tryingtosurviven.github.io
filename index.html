@@ -114,10 +114,28 @@
     <section class="hero">
         <img src="avatar.png" alt="Pixel Avatar" class="pixel-me">
         <h1>HI, I'M <span class="glitch-text">Natalie Chng</span></h1>
-        <p>ICT Student @ SUSS | Minor in Criminology</p>
-        <p style="font-size: 0.9rem; margin-top: 10px; border: 1px solid #333; padding: 10px;">
-            Winner of SMU Smart City Hackathon 2026. Specialized in Agentic AI & Secure Governance.
-        </p>
+        
+        <div style="max-width: 800px; text-align: center; margin-top: 20px;">
+            <p style="font-family: 'JetBrains Mono', monospace; color: var(--cyber-lime); font-size: 1.1rem; margin-bottom: 15px;">
+                > ICT Student @ SUSS | Minor in Criminology | Former Civil Engineering Professional
+            </p>
+            
+            <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-main); border-left: 2px solid var(--neon-purple); padding-left: 20px; text-align: left; margin: 0 auto; display: inline-block;">
+                I am a tech enthusiast focused on the intersection of **Agentic AI** and **Cybersecurity**. 
+                With a background in Civil Engineering and a current focus on Information Communication Technology, 
+                I bring a structured, analytical approach to solving complex digital problems.
+                <br><br>
+                Recently, I led a team to <strong>1st Place at the SMU Smart City Hackathon 2026</strong>, 
+                developing an AI-driven healthcare logistics system. I am passionate about building 
+                secure, governed AI solutions that protect digital infrastructures while improving 
+                citizen-centric services.
+            </p>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="#projects" class="btn" style="background: transparent; color: var(--cyber-lime); border: 1px solid var(--cyber-lime); margin-right: 10px;">VIEW_WORKS</a>
+            <a href="mailto:nataliechng001@suss.edu.sg" class="btn">CONTACT_ME</a>
+        </div>
     </section>
 
     <section id="projects">
@@ -212,6 +230,7 @@
         
         <div class="card" style="border-left: 4px solid var(--cyber-lime); background: linear-gradient(145deg, #111111, #0a0a0c);">
             <h3>SG Library Management System</h3>
+            
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 25px 0;">
                 <div style="background: #000; padding: 8px; border-radius: 6px; border: 1px solid #222; text-align: center;">
                     <p style="font-size: 0.6rem; color: var(--cyber-lime); margin-bottom: 5px; font-family: 'JetBrains Mono'; text-transform: uppercase;">// MAIN_CATALOG</p>
@@ -226,53 +245,33 @@
                     <img src="library/loan for nonadmin.png" style="width: 100%; cursor: zoom-in;" onclick="openImage(this.src)">
                 </div>
             </div>
-            <p style="color: var(--text-main); margin-bottom: 15px;">Full-stack automation bridging IT and Digital Governance. Engineered using <strong>Flask</strong> and <strong>MongoDB</strong>.</p>
-            <div class="tags">
-                <span class="tag">Python/Flask</span><span class="tag">MongoDB</span><span class="tag">RBAC_Governance</span>
-            </div>
-        </div>
 
-        <div class="card" style="border-left: 4px solid var(--neon-purple); background: linear-gradient(145deg, #0d0d0f, #111111);">
+            <p style="color: var(--text-main); margin-bottom: 15px;">
+                A full-stack solution bridging <strong>Information Technology</strong> and <strong>Digital Governance</strong>. 
+                Developed to automate manual workflows using <strong>Flask</strong> and <strong>MongoDB</strong>, 
+                ensuring data integrity through secure, authenticated protocols.
+            </p>
+            
+            <div class="tags" style="margin-bottom: 15px;">
+                <span class="tag">Python/Flask</span>
+                <span class="tag">MongoDB</span>
+                <span class="tag">NoSQL_Architecture</span>
+                <span class="tag">RBAC_Governance</span>
+            </div>
+        </div> <div class="card" style="border-left: 4px solid var(--neon-purple); background: linear-gradient(145deg, #0d0d0f, #111111);">
             <div class="winner-tag" style="background: var(--neon-purple); color: white;">ARI SCORE: 0.85+</div>
-            <h3>ICT335: Predictive Analytics & ML Pipeline</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 25px 0;">
-                <div style="background: #000; padding: 15px; border-radius: 6px; border: 1px solid #222; text-align: center;">
-                    <p style="font-size: 0.65rem; color: var(--neon-purple); margin-bottom: 8px; font-family: 'JetBrains Mono'; text-transform: uppercase;">// MODEL_PERFORMANCE_METRICS</p>
-                    <img src="ml-graph.png" alt="ML Graph" style="width: 100%; cursor: zoom-in; filter: hue-rotate(280deg);" onclick="openImage(this.src)">
-                </div>
-                <div style="display: flex; flex-direction: column; justify-content: center;">
-                    <p style="color: var(--text-main); margin-bottom: 15px;">Engineered an end-to-end pipeline using <strong>SVM</strong> and <strong>KNN</strong> optimized via <strong>GridSearchCV</strong>.</p>
-                    <p style="font-size: 0.85rem; color: var(--text-dim); border-left: 2px solid var(--neon-purple); padding-left: 10px;">Focus: Recidivism risk assessment modeling.</p>
-                </div>
+            <h3>Predictive Analytics ML Pipeline</h3>
+            <div style="margin: 20px 0; background: #000; padding: 10px; border: 1px solid #222;">
+                <img src="ml-graph.png" alt="ML Graph" style="width: 100%; cursor: zoom-in; filter: hue-rotate(280deg);" onclick="openImage(this.src)">
             </div>
+            <p>Python workflow using <strong>SVM/KNN</strong> and <strong>GridSearchCV</strong> for high-dimensional data optimization.</p>
             <div class="tags">
-                <span class="tag" style="color: var(--neon-purple); border-color: var(--neon-purple);">Scikit-Learn</span><span class="tag">Feature_Engineering</span>
+                <span class="tag" style="color: var(--neon-purple); border-color: var(--neon-purple);">Scikit-Learn</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">MLOps</span>
             </div>
-            <a href="https://github.com/tryingtosurviven/ict335-ml-pipeline.ipynb/blob/main/NatalieChng_K2480271_ICT335_ECA_06112025%20(1).ipynb" 
-                class="btn" 
-                style="background: var(--neon-purple); color: white;" 
-                target="_blank">
-                VIEW_ML_NOTEBOOK
-            </a>
-        </div>
-
-    </div>
-</section>
-
-    <p style="color: var(--text-main); margin-bottom: 15px;">
-        A full-stack solution bridging <strong>Information Technology</strong> and <strong>Digital Governance</strong>. 
-        Developed to automate manual workflows using <strong>Flask</strong> and <strong>MongoDB</strong>, ensuring 
-        data integrity and preventing inventory discrepancies through secure, authenticated protocols.
-    </p>
-    
-    <div class="tags" style="margin-bottom: 15px;">
-        <span class="tag">Python/Flask</span>
-        <span class="tag">MongoDB</span>
-        <span class="tag">NoSQL_Architecture</span>
-        <span class="tag">RBAC_Governance</span>
-    </div>
-</div>
-    </section>
+            <a href="ict335-ml-analysis.ipynb" class="btn" style="background: var(--neon-purple); color: white;" target="_blank">VIEW_ML_NOTEBOOK</a>
+        </div> </div> </section>
 
     <section id="skills">
         <h2>// TECH STACK</h2>
