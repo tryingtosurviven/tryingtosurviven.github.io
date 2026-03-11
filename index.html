@@ -3,116 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Page</title>
+    <title>Portfolio | Cyber & Tech</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #007bff;
-            --background-color: #f8f9fa;
-            --text-color: #343a40;
-            --card-background: #ffffff;
+            --bg: #050505;
+            --card-bg: #111111;
+            --cyber-lime: #39ff14;
+            --neon-purple: #bc13fe;
+            --text-main: #e2e8f0;
+            --text-dim: #94a3b8;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: var(--text-color);
-            background-color: var(--background-color);
-        }
-
-        nav {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 400;
-            font-size: 1.1em;
-            padding: 8px 12px;
-            border-radius: 5px;
-            transition: color 0.3s, background-color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--card-background);
-            background-color: var(--primary-color);
-        }
-
-        .page-section {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .content {
-            background-color: var(--card-background);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-            max-width: 700px;
-        }
-
-        .content h1 {
-            font-size: 3em;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .content p {
-            font-size: 1.2em;
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg); 
+            color: var(--text-main); 
             line-height: 1.6;
+            overflow-x: hidden;
         }
+
+        /* Fun Neon Scanline Effect */
+        body::before {
+            content: " ";
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 9999;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+
+        nav { 
+            position: fixed; width: 100%; top: 0; 
+            background: rgba(5, 5, 5, 0.8); 
+            backdrop-filter: blur(10px); 
+            z-index: 1000; padding: 15px 0; 
+            border-bottom: 1px solid #222; 
+        }
+        nav .container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+        nav ul { list-style: none; display: flex; gap: 20px; }
+        nav a { text-decoration: none; color: var(--text-main); font-family: 'JetBrains Mono', monospace; font-size: 0.85em; transition: 0.3s; }
+        nav a:hover { color: var(--cyber-lime); text-shadow: 0 0 8px var(--cyber-lime); }
+
+        /* Hero Section */
+        .hero { height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .pixel-me { width: 150px; height: 150px; border: 4px solid var(--neon-purple); border-radius: 12px; margin-bottom: 20px; box-shadow: 0 0 20px var(--neon-purple); background: #222; }
+        .hero h1 { font-size: 3.5rem; font-weight: 800; text-transform: uppercase; letter-spacing: -2px; }
+        .glitch-text { color: var(--cyber-lime); text-shadow: 2px 2px var(--neon-purple); font-family: 'JetBrains Mono', monospace; }
+        .hero p { max-width: 600px; color: var(--text-dim); margin-top: 15px; font-size: 1.1rem; }
+
+        /* Sections */
+        section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
+        h2 { font-family: 'JetBrains Mono', monospace; color: var(--neon-purple); margin-bottom: 40px; font-size: 1.8rem; text-transform: uppercase; }
+
+        /* Project Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+        .card { 
+            background: var(--card-bg); 
+            border-radius: 4px; 
+            padding: 30px; 
+            border-left: 4px solid var(--cyber-lime); 
+            transition: 0.3s; 
+            position: relative;
+        }
+        .card:hover { 
+            background: #181818; 
+            transform: scale(1.02); 
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.1); 
+        }
+        
+        .winner-tag { 
+            background: var(--cyber-lime); color: black; 
+            font-family: 'JetBrains Mono', monospace; font-weight: bold;
+            padding: 2px 10px; font-size: 0.7rem; position: absolute; top: 0; right: 0;
+        }
+
+        .card h3 { margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; color: var(--text-main); }
+        .card p { font-size: 0.9rem; color: var(--text-dim); margin-bottom: 20px; }
+        
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tag { border: 1px solid #333; color: var(--cyber-lime); font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; padding: 2px 8px; border-radius: 2px; }
+
+        .btn { 
+            display: inline-block; margin-top: 20px; 
+            text-decoration: none; color: black; background: var(--cyber-lime); 
+            padding: 10px 20px; font-weight: bold; font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem; border-radius: 2px; transition: 0.3s;
+        }
+        .btn:hover { box-shadow: 0 0 15px var(--cyber-lime); }
+
+        footer { text-align: center; padding: 60px; font-family: 'JetBrains Mono', monospace; color: #444; font-size: 0.7rem; }
     </style>
 </head>
 <body>
+
     <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-        </ul>
+        <div class="container">
+            <div style="font-family: 'JetBrains Mono', monospace; font-weight: bold; color: var(--cyber-lime);">> TRYINGTOSURVIVEN_</div>
+            <ul>
+                <li><a href="#projects">/PROJECTS</a></li>
+                <li><a href="#academic">/ACADEMIC</a></li>
+                <li><a href="#skills">/SKILLS</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <section id="about" class="page-section">
-        <div class="content">
-            <h1>About Me</h1>
-            <p>Welcome! I'm a developer and researcher passionate about technology and innovation. This is my personal space to share my projects and ideas.</p>
+    <section class="hero">
+        <img src="avatar.png" alt="Pixel Avatar" class="pixel-me">
+        <h1>HI, I'M <span class="glitch-text">Natalie Chng</span></h1>
+        <p>ICT Student @ SUSS | Minor in Criminology</p>
+        <p style="font-size: 0.9rem; margin-top: 10px; border: 1px solid #333; padding: 10px;">
+            Winner of SMU Smart City Hackathon 2026. Specialized in Agentic AI & Secure Governance.
+        </p>
+    </section>
+
+    <section id="projects">
+        <h2>// HACKATHONS</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="winner-tag">1ST PLACE</div>
+                <h3>UrbanPulse</h3>
+
+                <img src="urbanpulse-demo.gif" alt="UrbanPulse Dashboard Demo" style="width:100%; height:auto; border-radius:4px; margin-bottom:15px; border:1px solid #333;">
+
+                <p>Led end-to-end development of an Agentic AI system (1st out of 35 teams) using IBM Watsonx.ai to automate healthcare logistics during environmental crises.</p>
+                
+                <div class="tags">
+                    <span class="tag">Python</span><span class="tag">IBM Watsonx.ai</span><span class="tag">Governance</span>
+                </div>
+
+                <a href="https://github.com/tryingtosurviven/urbanpulse2-1.git" class="btn">VIEW_CODE</a>
+            </div>
+
+            <div class="card" style="border-left-color: var(--neon-purple);">
+                <h3>FinTech Challenge</h3>
+                <p>Round 1 successfully submitted. Focused on developing secure financial transaction protocols.</p>
+                <div class="tags">
+                    <span class="tag">Java</span><span class="tag">JSON</span><span class="tag">Security</span>
+                </div>
+                <p style="margin-top:15px; font-size: 0.7rem; color: var(--neon-purple);">[STATUS: PENDING ROUND 2]</p>
+            </div>
         </div>
     </section>
 
-    <section id="research" class="page-section">
-        <div class="content">
-            <h1>Research</h1>
-            <p>This section outlines my research interests, publications, and ongoing projects. My work focuses on machine learning and data science.</p>
+    <section id="academic">
+        <h2>// ACADEMIC_REPOS</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Library Management System</h3>
+                <p>Automated manual workflows using SQL/MongoDB to enforce data integrity and prevent inventory errors.</p>
+                <div class="tags"><span class="tag">SQL</span><span class="tag">MongoDB</span><span class="tag">Automation</span></div>
+            </div>
+            <div class="card">
+                <h3>ML Pipeline Optimization</h3>
+                <p>End-to-end Python workflow with SVM/KNN algorithms. Achieved ARI > 0.85 via GridSearchCV optimization.</p>
+                <div class="tags"><span class="tag">Scikit-Learn</span><span class="tag">GridSearchCV</span><span class="tag">Pandas</span></div>
+            </div>
         </div>
     </section>
 
-    <section id="portfolio" class="page-section">
-        <div class="content">
-            <h1>Portfolio</h1>
-            <p>Here you can find a selection of my work, including personal projects, code snippets, and design examples. Click on the links to explore more!</p>
+    <section id="skills">
+        <h2>// TECH_STACK</h2>
+        <div class="tags" style="font-size: 1.2rem;">
+            <span class="tag">Python</span><span class="tag">Java</span><span class="tag">SQL</span>
+            <span class="tag">MongoDB</span><span class="tag">Criminology_Minor</span><span class="tag">Fusion_360</span>
+            <span class="tag">Bambu_Studio</span><span class="tag">Rapid_Prototyping</span>
         </div>
     </section>
+
+    <footer>
+        TERMINAL_CONNECTED // 2026 // [YOUR NAME]
+    </footer>
+
 </body>
 </html>
